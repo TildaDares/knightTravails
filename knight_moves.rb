@@ -45,8 +45,9 @@ class Knight
             route_array << [current_parent.x_coord, current_parent.y_coord]
             current_parent = current_parent.parent
         end
+        puts "You made it in #{route_array.length - 1} moves. Here's your path:"
         return route_array.reverse!
     end
 end
 knight = Knight.new
-p knight.bfs_search([0,0], [3,3])
+p knight.bfs_search([3,3], [4,3])
