@@ -42,11 +42,11 @@ class Knight
         route_array = []
         route_array = [[obj_coord.x_coord, obj_coord.y_coord]]
         until current_parent.nil?
-            route_array << [current_parent.x_coord, current_parent.y_coord]
+            route_array.unshift([current_parent.x_coord, current_parent.y_coord])
             current_parent = current_parent.parent
         end
         puts "You made it in #{route_array.length - 1} moves. Here's your path:"
-        return route_array.reverse!
+        return route_array
     end
 end
 knight = Knight.new
